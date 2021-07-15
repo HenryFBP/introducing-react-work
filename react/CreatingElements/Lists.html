@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://unpkg.com/react@16.7.0/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16.7.0/umd/react-dom.development.js"></script>
+    <style>
+        .my-fruits {
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="my-react-app"></div>
+    <script>
+        var el = React.createElement("div", { key: "el-key" }, "My fave fruits");
+
+        var element_list = [
+            el,
+            React.createElement("li", { key: "O-key" }, "Orange"),
+            React.createElement("li", { key: "A-key" }, "Apple"),
+            React.createElement("li", { key: "B-key" }, "Banana"),
+        ];
+
+        var list_el = React.createElement("ul", { className: "my-fruits" }, element_list);
+
+        ReactDOM.render(list_el, document.getElementById('my-react-app'));
+    </script>
+</body>
+
+</html>
