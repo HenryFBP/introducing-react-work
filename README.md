@@ -1,3 +1,3 @@
-# introducing-react-work
+# reactjs-learning
 
-From skillsoft course "Build Apps Using React: Introducing React for Web Applications"
+From skillsoft courses "Build Apps Using React: ..."
