@@ -13,8 +13,18 @@ class App extends React.Component {
     ]
   }
 
-  addComment = (message) =>{
-    this.setState(function(prevState){
+  deleteComment = (index) => {
+    this.setState(function (prevState) {
+      var messages = prevState.messages.concat();
+      messages.splice(index, 1);
+      return {
+        messages: messages
+      }
+    });
+  }
+
+  addComment = (message) => {
+    this.setState(function (prevState) {
       var messages = prevState.messages.concat();
       messages.push(message);
       return {
@@ -26,8 +36,9 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <CommentBox addComment={this.addComment}/>
-        <CommentList messages={this.state.messages} />
+        <CommentBox addComment={this.addComment} />
+        <CommentList messages={this.state.messages}
+                     deleteComment={this.deleteComment} />
       </div>
     );
   }

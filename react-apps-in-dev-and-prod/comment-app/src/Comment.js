@@ -3,6 +3,11 @@ import message from './message.jpg';
 import trash from './trash.jpg';
 
 class Comment extends React.Component {
+
+    deleteComment = () => {
+        this.props.deleteComment(this.props.index);
+    }
+
     render() {
         return (
 
@@ -15,7 +20,7 @@ class Comment extends React.Component {
                         <td className="message">
                             {this.props.message}
                         </td>
-                        <td className="delete">
+                        <td className="delete" onClick={this.deleteComment}>
                             <img src={trash} />
                         </td>
                     </tr>
