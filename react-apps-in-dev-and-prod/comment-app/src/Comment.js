@@ -13,7 +13,7 @@ class Comment extends React.Component {
                             <img src={message} />
                         </td>
                         <td className="message">
-                            Messages go here.
+                            {this.props.message}
                         </td>
                         <td className="delete">
                             <img src={trash} />

@@ -1,14 +1,16 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import Comment from './Comment';
 
 class CommentList extends React.Component {
-    render(){
+    render() {
         return (
             <div className="commentList">
-                <Comment key={1}/>
-                <Comment key={2}/>
-                <Comment key={3}/>
-                <Comment key={4}/>
+                {
+                    this.props.messages.map(
+                        (message) =>
+                            <Comment key={message} message={message} />
+                    )
+                }
             </div>
         )
     }
