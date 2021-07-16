@@ -13,10 +13,20 @@ class App extends React.Component {
     ]
   }
 
+  addComment = (message) =>{
+    this.setState(function(prevState){
+      var messages = prevState.messages.concat();
+      messages.push(message);
+      return {
+        messages: messages
+      }
+    });
+  }
+
   render() {
     return (
       <div>
-        <CommentBox />
+        <CommentBox addComment={this.addComment}/>
         <CommentList messages={this.state.messages} />
       </div>
     );
