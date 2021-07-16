@@ -13,7 +13,7 @@ class CommentList extends React.Component {
                                 key={idx}
                                 message={message}
                                 index={idx++}
-                                {...this.props} //spread operator, 
+                                {...this.props} //spread operator
                             />
                     )
                 }
