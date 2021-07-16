@@ -28,11 +28,7 @@
 
             const fruitstrings = [orange_str, apple_str, banana_str];
 
-            if (i < 0 || i >= fruitstrings.length) {
-                return (<b>Invalid fruit!</b>);
-            }
-
-            return fruitstrings[i];
+            return fruitstrings[i] || (<b>Invalid fruit!</b>);
         }
 
         const fruit_list = (
