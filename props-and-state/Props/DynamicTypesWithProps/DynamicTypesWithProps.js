@@ -1,0 +1,58 @@
+function Circle(props) {
+    const style = {
+        backgroundColor: props.color
+    };
+
+    return <div className='circle'
+        style={style}>
+    </div>
+}
+
+//none of these functions dynamically pick what circle they render
+function PurpleCircle(props) {
+    return <Circle color="purple"></Circle>
+}
+
+function GreenCircle(props) {
+    return <Circle color="green"></Circle>
+}
+
+function RedCircle(props) {
+    return <Circle color="red"></Circle>
+}
+
+function BlackCircle(props) {
+    return <Circle color="black"></Circle>
+}
+
+//except this one
+function PickCircle(props) {
+    const Circles = [
+        PurpleCircle,
+        GreenCircle,
+        RedCircle,
+        BlackCircle
+    ];
+
+    const SomeCircle = Circles[props.index];
+
+    return <SomeCircle />;
+}
+
+ReactDOM.render(<Circle color="pink" />,
+    document.getElementById('react-dynamic-prop1'));
+
+ReactDOM.render(<PurpleCircle />,
+    document.getElementById('react-dynamic-prop2'));
+
+ReactDOM.render(<GreenCircle />,
+    document.getElementById('react-dynamic-prop3'));
+
+ReactDOM.render(<RedCircle />,
+    document.getElementById('react-dynamic-prop4'));
+
+ReactDOM.render(<BlackCircle />,
+    document.getElementById('react-dynamic-prop5'));
+
+ReactDOM.render(<PickCircle index={Math.floor(Math.random() * 4)} />,
+    document.getElementById('react-dynamic-prop6'));
