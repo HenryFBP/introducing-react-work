@@ -76,4 +76,34 @@ class DetailsBox extends React.Component {
             subject: subjects[subjectIdx]
         });
     }
+
+    render(){
+        const style={
+            color:this.state.color,
+            backgroundColor:this.state.backgroundColor
+        };
+
+        return (
+            <div>
+                <div className="details" style={style}>
+                    Name: {this.state.name}<br/>
+                    Subject: {this.state.subject}
+                </div>
+                <button className="button" onClick={this.pickRandomName}>
+                    Change Student Name
+                </button>
+                <button className="button" onClick={this.pickRandomColor}>
+                    Change Text Color
+                </button>
+                <button className="button" onClick={this.pickRandomBackgroundColor}>
+                    Change Background Color
+                </button>
+                <button className="button" onClick={this.pickRandomSubject}>
+                    Change Subject
+                </button>
+            </div>
+        );
+    }
 }
+
+ReactDOM.render(<DetailsBox/>,document.getElementById('react-update-state'))
