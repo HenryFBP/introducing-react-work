@@ -77,16 +77,16 @@ class DetailsBox extends React.Component {
         });
     }
 
-    render(){
-        const style={
-            color:this.state.color,
-            backgroundColor:this.state.backgroundColor
+    render() {
+        const style = {
+            color: this.state.color,
+            backgroundColor: this.state.backgroundColor
         };
 
         return (
             <div>
                 <div className="details" style={style}>
-                    Name: {this.state.name}<br/>
+                    Name: {this.state.name}<br />
                     Subject: {this.state.subject}
                 </div>
                 <button className="button" onClick={this.pickRandomName}>
@@ -106,4 +106,4 @@ class DetailsBox extends React.Component {
     }
 }
 
-ReactDOM.render(<DetailsBox/>,document.getElementById('react-update-state'))
+ReactDOM.render(<DetailsBox />, document.getElementById('react-update-state'))
