@@ -4,8 +4,8 @@ const currencyNames = {
     r: 'Rupees'
 };
 
-rupeesToDollars = (r) => { r * 0.014 };
-dollarsToRupees = (d) => { d * 70.95 };
+function rupeesToDollars(r) { return r * 0.014 };
+function dollarsToRupees(d) { return d * 70.95 };
 
 
 /**
@@ -28,7 +28,7 @@ function tryConvert(money, convertfn) {
 }
 
 function Millionaire(props) {
-    if (props.networth >= 1000000) {
+    if (props.dollars >= 1000000) {
         return <p className="millionaire">A millionaire!</p>
     } else {
         return <p className="not-millionaire">Not yet a millionaire...</p>
@@ -51,7 +51,7 @@ class NetWorthInput extends React.Component {
                 <legend>Enter net worth in {currencyNames[currency]}:</legend>
 
                 <input className='input'
-                    defaultValue={networth}
+                    value={networth}
                     onChange={this.handleChange} />
 
             </fieldset>
@@ -62,15 +62,46 @@ class NetWorthInput extends React.Component {
 class MillionaireCalculator extends React.Component {
     constructor(props) {
         super(props);
+
+        this.state = {
+            networth: '0',
+            currency: 'd'
+        };
+    }
+
+    handleDollarChange = (networth) => {
+        this.setState({ currency: 'd', networth: networth });
+    }
+
+    handleRupeeChange = (networth) => {
+        this.setState({ currency: 'r', networth: networth });
     }
 
     render() {
+
+        const currency = this.state.currency;
+        const networth = this.state.networth;
+
+        //check if we use rupees or dollars
+        const dollars = currency === 'r' ? tryConvert(networth, rupeesToDollars) : networth;
+        const rupees = currency === 'd' ? tryConvert(networth, dollarsToRupees) : networth;
+
         return (
             <div className="contents">
-                <NetWorthInput currency={'d'} />
-                <NetWorthInput currency={'r'} />
+                <NetWorthInput
+                    currency='d'
+                    networth={dollars}
+                    onNetWorthChange={this.handleDollarChange} />
+
+                <NetWorthInput
+                    currency='r'
+                    networth={rupees}
+                    onNetWorthChange={this.handleRupeeChange} />
+
+                <Millionaire
+                    dollars={parseFloat(dollars)} />
             </div>
-        )
+        );
     }
 }
 
