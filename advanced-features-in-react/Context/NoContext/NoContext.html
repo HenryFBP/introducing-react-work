@@ -1,0 +1,126 @@
+<html>
+
+<head>
+    <script src="https://unpkg.com/react@16.7.0/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16.7.0/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
+    <style>
+        .bt {
+            padding: 6px;
+            border: 10px solid;
+            width: 350px;
+            font-size: 44px;
+        }
+
+        .bt-dark {
+            border-color: #330;
+        }
+
+        .bt-light {
+            border-color: #ffffe6;
+        }
+
+        .bt-green {
+            border-color: green;
+        }
+
+        .bt-orange {
+            border-color: orange;
+        }
+
+        .bt-red {
+            border-color: red;
+        }
+
+        .bg-green {
+            background-color: #ebfaeb;
+        }
+
+        .bg-orange {
+            background-color: #fff2e6;
+        }
+
+        .bg-red {
+            background-color: #ffebe6;
+        }
+
+        .bg-dark {
+            background-color: #808000;
+            color: white;
+        }
+
+        .dialog {
+            margin-top: 12px;
+            padding: 12px;
+        }
+
+        .dialog-dark {
+            background-color: #333300;
+            color: white;
+        }
+
+        .dialog-light {
+            background-color: #ffffe6;
+            color: black;
+        }
+
+        .dialog-title {
+            font-family: Verdana;
+        }
+
+        .dialog-message {
+            font-family: Verdana;
+            font-size: 32px;
+        }
+
+        .button {
+            margin-top: 12px;
+            display: block;
+            /* border: solid 1px orangered; */
+            color: black;
+            width: 100px;
+            cursor: pointer;
+            line-height: 26px;
+            font-size: 14px;
+            /* background-color: #cc0; */
+        }
+
+        .button-dark {
+            background-color: #333300;
+            color: white;
+        }
+
+        .button-dark:hover {
+            background-color: #ffffe6;
+            color: black;
+        }
+
+        .button-light {
+            background-color: #ffffe6;
+            color: black;
+        }
+
+        .button-light:hover {
+            background-color: #333300;
+            color: white;
+        }
+
+        .greeting-title {
+            color: blue;
+            font-family: sans-serif;
+        }
+
+        .greeting-message {
+            color: #c09;
+            font-size: larger;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container" id="react-no-context"></div>
+    <div class="container" id="react-no-context2"></div>
+    <script type="text/babel" src="NoContext.jsx"></script>
+</body>
+
+</html>
