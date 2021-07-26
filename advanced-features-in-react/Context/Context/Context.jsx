@@ -49,6 +49,7 @@ ThemedDialog.contextType = ThemeContext;
 //what's the theme? Go to the top!
 ReactDOM.render(
     <div>
+
         <ThemedBorderBackground>
             {/* no theme prop! woo!*/}
             Hello!
@@ -57,8 +58,11 @@ ReactDOM.render(
         <ThemedButton label="click me!">
         </ThemedButton>
 
-        <ThemedDialog title="Dialog title here" message="Dialog message here">
-        </ThemedDialog>
+        <ThemeContext.Provider value="dark"> {/* Delete if you want light theme for bottom element. This specifies context for all its children. */}
+
+            <ThemedDialog title="Dialog title here" message="Dialog message here">
+            </ThemedDialog>
+        </ThemeContext.Provider>
     </div>,
     document.getElementById('react-context'));
 
